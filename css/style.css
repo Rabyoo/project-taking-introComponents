@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Cairo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400, 500, 550, 600, 700;
+    font-style: normal;
+}
+body {
+    background-color: #fff;
+    min-height: 100vh;
+}
+main {
+    max-width: 100%;
+    width: 80%;
+    margin: 0px auto;
+}
+header {
+    max-width: 100%;
+    width: 80%;
+    margin: 40px auto;
+}
+main .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    margin: -45px auto;
+    position: relative;
+    left: 20px;
+    top: -20px;
+} 
+main .content section .title h2 {
+    color: #555;
+    margin-bottom: 15px;
+}
+main .content section .title h2 span {
+    border-radius: 30px;
+    background-color: #111;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: 550;
+    color: #eee;
+}
+.devices::before {
+    content: "";
+    position: absolute;
+    top: -16%;
+    right: 0;
+    width: 62%;
+    height: 60%;
+    background-color: aquamarine;
+    z-index: -99;
+    border-radius: 0 0 0 100px;
+    opacity: 0.2;
+}
+.devices img {
+    width: 95%;
+    position: relative;
+    overflow: hidden;
+    animation: devices 2s linear infinite;
+}
+
+@keyframes devices {
+    0% {
+        position: relative;
+        top: -10px;
+    }
+    50% {
+        position: relative;
+        top: 20px;
+    }
+    100% {
+        position: relative;
+        top: -10px;
+    }
+}
+
+@media screen and (max-width:769px) {
+    main .content {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        overflow: hidden;
+    }
+    .devices {
+        width: 90%;
+        position: relative;
+        top: 80px;
+        max-height: 100%;
+        height: 100%;
+        z-index: 9999;
+    }
+    .devices::before {
+        display: none;
+    }
+}
